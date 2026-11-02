@@ -8,17 +8,17 @@ CRUD (Create, Read, Update, Delete) operations, built using
 
 ---
 
-## ✨ Features
-- ➕ Add new student records (with validation)
-- 📋 View all students in a clean table
-- ✏️ Update student details
-- 🗑️ Delete records (with confirmation dialog)
-- 🔍 Search students by name, course or email
-- 📊 Dashboard with stats and recently added students
-- 📱 Fully responsive design
-- ⚡ Flash messages for success/error feedback
+## Features
+- Add new student records (with validation)
+-  View all students in a clean table
+-  Update student details
+-  Delete records (with confirmation dialog)
+-  Search students by name, course or email
+-  Dashboard with stats and recently added students
+-  Fully responsive design
+-  Flash messages for success/error feedback
 
-## 🛠️ Technologies Used
+## Technologies Used
 | Layer      | Technology          |
 |------------|---------------------|
 | Backend    | Python 3 + Flask    |
@@ -26,7 +26,7 @@ CRUD (Create, Read, Update, Delete) operations, built using
 | Frontend   | HTML5, CSS3, Jinja2 |
 | Scripting  | JavaScript          |
 
-## 📂 Project Structure
+## Project Structure
 ```
 student-management-system/
 ├── app.py                 # Main Flask application (routes + DB logic)
@@ -42,7 +42,7 @@ student-management-system/
     └── js/main.js         # Confirm dialog + flash auto-dismiss
 ```
 
-## 🚀 How to Run
+##  How to Run
 
 1. **Install Flask** (one time only):
    ```bash
@@ -61,7 +61,7 @@ student-management-system/
 
 The database file `students.db` is created automatically on first run.
 
-## 🧪 Testing Checklist
+##  Testing Checklist
 - [x] Add a student → appears in "All Students"
 - [x] Try adding a duplicate email → error shown
 - [x] Search by name/course/email → correct results
