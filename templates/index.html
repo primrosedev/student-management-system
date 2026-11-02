@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | StudentMS{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Welcome to StudentMS 👋</h1>
+    <p>Manage all your student records in one place — add, view, update and delete with ease.</p>
+    <a href="{{ url_for('add_student') }}" class="btn-primary">+ Add New Student</a>
+</section>
+
+<section class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-number">{{ total }}</span>
+        <span class="stat-label">Total Students</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number">CRUD</span>
+        <span class="stat-label">Full Operations</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Responsive UI</span>
+    </div>
+</section>
+
+<section class="card">
+    <div class="card-header">
+        <h2>Recently Added Students</h2>
+        <a href="{{ url_for('students') }}" class="link">View all →</a>
+    </div>
+    {% if latest %}
+    <table>
+        <thead>
+            <tr><th>ID</th><th>Name</th><th>Email</th><th>Course</th><th>Age</th></tr>
+        </thead>
+        <tbody>
+            {% for s in latest %}
+            <tr>
+                <td>{{ s.id }}</td>
+                <td>{{ s.name }}</td>
+                <td>{{ s.email }}</td>
+                <td><span class="badge">{{ s.course }}</span></td>
+                <td>{{ s.age }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="empty">No students yet. <a href="{{ url_for('add_student') }}">Add your first student!</a></p>
+    {% endif %}
+</section>
+{% endblock %}

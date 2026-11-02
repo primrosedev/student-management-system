@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Add Student | StudentMS{% endblock %}
+{% block content %}
+<section class="card form-card">
+    <h1>Add New Student</h1>
+    <p class="subtitle">Fill in the details below to register a student.</p>
+
+    <form method="POST" action="{{ url_for('add_student') }}" class="form">
+        <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required
+                   placeholder="e.g. John Doe">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required
+                   placeholder="e.g. john@example.com">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required
+                   placeholder="e.g. 0712345678">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="course">Course *</label>
+                <input type="text" id="course" name="course" required
+                       placeholder="e.g. Computer Science">
+            </div>
+            <div class="form-group">
+                <label for="age">Age *</label>
+                <input type="number" id="age" name="age" min="5" max="100" required
+                       placeholder="e.g. 20">
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">💾 Save Student</button>
+            <a href="{{ url_for('students') }}" class="btn-secondary">Cancel</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Edit Student | StudentMS{% endblock %}
+{% block content %}
+<section class="card form-card">
+    <h1>✏️ Edit Student #{{ student.id }}</h1>
+    <p class="subtitle">Update the information below.</p>
+
+    <form method="POST" action="{{ url_for('edit_student', student_id=student.id) }}" class="form">
+        <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" value="{{ student.name }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" value="{{ student.email }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" value="{{ student.phone }}" required>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="course">Course *</label>
+                <input type="text" id="course" name="course" value="{{ student.course }}" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age *</label>
+                <input type="number" id="age" name="age" min="5" max="100"
+                       value="{{ student.age }}" required>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">💾 Update Student</button>
+            <a href="{{ url_for('students') }}" class="btn-secondary">Cancel</a>
+        </div>
+    </form>
+</section>
+{% endblock %}
